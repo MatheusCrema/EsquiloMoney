@@ -5,21 +5,21 @@ using ApplicationCore.Entities;
 
 namespace ApplicationCore.Interfaces.Services.Communication
 {
-    public class AccountResponse : BaseResponse
+    public class IdentityResponse : BaseResponse
     {
-        public Account Account { get; private set; }
+        public Identity Identity { get; private set; }
 
-        private AccountResponse(bool success, string message, Account account) : base(success, message)
+        private IdentityResponse(bool success, string message, Identity identity) : base(success, message)
         {
-            Account = account;
+            Identity = identity;
         }
 
         /// <summary>
         /// Creates a success response.
         /// </summary>
-        /// <param name="Account">Saved Account.</param>
+        /// <param name="Identity">Saved Identity.</param>
         /// <returns>Response.</returns>
-        public AccountResponse(Account Account) : this(true, string.Empty, Account)
+        public IdentityResponse(Identity Identity) : this(true, string.Empty, Identity)
         { }
 
         /// <summary>
@@ -27,7 +27,7 @@ namespace ApplicationCore.Interfaces.Services.Communication
         /// </summary>
         /// <param name="message">Error message.</param>
         /// <returns>Response.</returns>
-        public AccountResponse(string message) : this(false, message, null)
+        public IdentityResponse(string message) : this(false, message, null)
         { }
     }
 }

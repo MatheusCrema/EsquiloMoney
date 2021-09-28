@@ -25,6 +25,13 @@ namespace ApplicationCore.Extensions.Mapping
             CreateMap<CategoryBalance, CategoryBalanceResource>();
 
             CreateMap<QueryResult<CategoryBalance>, QueryResultResource<CategoryBalanceResource>>();
+
+
+            //Identity
+            CreateMap<Identity, IdentityResource>();
+
+            CreateMap<QueryResult<Identity>, QueryResultResource<IdentityResource>>();
+
         }
     }
 }

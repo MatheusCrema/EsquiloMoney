@@ -16,9 +16,9 @@ namespace ApplicationCore.Entities
 
         public int InstitutionID { get; set; }
 
-        //public Identity Identity { get; set; } = new Identity();
+        public Identity Identity { get; set; } = new Identity();
 
-        //public Institution Institution { get; set; } = new Institution();
+        public Institution Institution { get; set; } = new Institution();
 
     }
 

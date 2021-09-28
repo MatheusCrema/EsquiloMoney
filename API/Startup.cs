@@ -64,6 +64,9 @@ namespace API
             services.AddScoped<ICategoryBalanceRepository, CategoryBalanceRepository>();
             services.AddScoped<ICategoryBalanceService, CategoryBalanceService>();
 
+            services.AddScoped<IIdentityRepository, IdentityRepository>();
+            services.AddScoped<IIdentityService, IdentityService>();
+
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             services.AddAutoMapper(typeof(Startup));

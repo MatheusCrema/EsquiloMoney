@@ -15,6 +15,8 @@ namespace Infrastructure.Data
         public DbSet<Account> Accounts { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<CategoryBalance> CategoryBalances { get; set; }
+        public DbSet<Identity> Identities { get; set; }
+        public DbSet<Institution> Institutions { get; set; }
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
@@ -30,8 +32,8 @@ namespace Infrastructure.Data
             builder.Entity<Account>().Property(p => p.ExpireDT);
             builder.Entity<Account>().Property(p => p.IdentityID);
             builder.Entity<Account>().Property(p => p.InstitutionID);
-            //builder.Entity<Account>().HasOne(p => p.Institution);
-            //builder.Entity<Account>().HasOne(p => p.Identity);
+            builder.Entity<Account>().HasOne(p => p.Institution);
+            builder.Entity<Account>().HasOne(p => p.Identity);
 
 
             builder.Entity<Category>().ToTable("Category", "Core");
@@ -55,8 +57,23 @@ namespace Infrastructure.Data
             builder.Entity<CategoryBalance>().Property(p => p.CategoryID);
             builder.Entity<CategoryBalance>().Property(p => p.CreatedDT).IsRequired();
 
-         }
+            builder.Entity<Identity>().ToTable("Identity", "Core");
+            builder.Entity<Identity>().HasKey(p => p.IdentityID);
+            builder.Entity<Identity>().Property(p => p.IdentityID).IsRequired();
+            builder.Entity<Identity>().Property(p => p.FirstName).IsRequired().HasMaxLength(50);
+            builder.Entity<Identity>().Property(p => p.LastName).IsRequired().HasMaxLength(50);
+            builder.Entity<Identity>().Property(p => p.Email).IsRequired().HasMaxLength(200);
+            builder.Entity<Identity>().Property(p => p.Phone).HasMaxLength(25);
+            builder.Entity<Identity>().Property(p => p.CreatedDT).IsRequired();
+            builder.Entity<Identity>().HasMany(p => p.Accounts);
 
+            builder.Entity<Institution>().ToTable("Institution", "Core");
+            builder.Entity<Institution>().HasKey(p => p.InstitutionID);
+            builder.Entity<Institution>().Property(p => p.InstitutionID).IsRequired();
+            builder.Entity<Institution>().Property(p => p.Name).IsRequired().HasMaxLength(20);
+            builder.Entity<Institution>().Property(p => p.CreatedDT).IsRequired();
+            builder.Entity<Institution>().HasMany(p => p.Accounts);
+        }
 
     }
 }

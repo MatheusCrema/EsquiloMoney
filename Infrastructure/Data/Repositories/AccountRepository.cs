@@ -27,7 +27,7 @@ namespace Infrastructure.Data.Repositories
 
         public async Task<QueryResult<Account>> ListAsync(AccountsQuery query)
         {
-            IQueryable<Account> queryable = _context.Accounts.AsNoTracking();
+            IQueryable<Account> queryable = _context.Accounts.AsNoTracking().Include(p => p.Institution).Include(p => p.Identity);
 
             int totalItems = await queryable.CountAsync();
 

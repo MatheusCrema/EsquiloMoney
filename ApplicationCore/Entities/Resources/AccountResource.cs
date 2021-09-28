@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace ApplicationCore.Entities.Resources
 {
@@ -13,9 +12,5 @@ namespace ApplicationCore.Entities.Resources
 
         public DateTime CreatedDT { get; set; }
 
-        public int IdentityID { get; set; }
-
-        public int InstitutionID { get; set; }
-                
     }
 }

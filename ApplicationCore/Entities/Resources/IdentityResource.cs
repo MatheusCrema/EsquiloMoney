@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ApplicationCore.Entities
+namespace ApplicationCore.Entities.Resources
 {
-    public class Identity
+    public class IdentityResource
     {
         public int? IdentityID { get; set; }
 
@@ -12,13 +12,12 @@ namespace ApplicationCore.Entities
         public string LastName { get; set; }
 
         public string Email { get; set; }
-        
+
         public string Phone { get; set; }
 
         public DateTime CreatedDT { get; set; }
 
-        public List<Account> Accounts { get; set; } = new List<Account>();
+        public List<AccountResource> Accounts { get; set; } = new List<AccountResource>();
 
     }
-
 }
