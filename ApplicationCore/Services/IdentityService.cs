@@ -55,9 +55,19 @@ namespace ApplicationCore.Services
             return await _identityRepository.ListAsync(query);
         }
 
-        public Task<IdentityResponse> SaveAsync(Identity identity)
+        public async Task<IdentityResponse> SaveAsync(Identity identity)
         {
-            throw new NotImplementedException();
+            try
+            {
+                await _identityRepository.AddAsync(identity);
+                await _unitOfWork.CompleteAsync();
+
+                return new IdentityResponse(identity);
+            }
+            catch (Exception ex)
+            {
+                return new IdentityResponse($"An error occured when saving the identity: {ex.Message} n/ {ex.StackTrace}");
+            }
         }
 
         public async Task<IdentityResponse> UpdateAsync(int id, Identity identity)

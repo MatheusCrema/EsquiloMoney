@@ -9,11 +9,11 @@ namespace ApplicationCore.Entities.Resources
 {
     public class SaveCategoryResource
     {
-        
+
         [Required]
         [MaxLength(50)]
         public string Name { get; set; }
-        
+
         [MaxLength(255)]
         public string Description { get; set; }
 
@@ -22,7 +22,7 @@ namespace ApplicationCore.Entities.Resources
 
         public DateTime CreatedDT { get; set; }
 
-        public int? CategoryParentID  { get; set; }
+        public int? CategoryParentID { get; set; }
     }
 
 }

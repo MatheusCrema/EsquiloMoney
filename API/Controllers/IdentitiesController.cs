@@ -55,6 +55,21 @@ namespace API.Controllers
             return StatusCode(204);
         }
 
+        [HttpPost]
+        public async Task<IActionResult> PostAsync([FromBody] SaveIdentityResource resource)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState.GetErrorMessages());
+
+            var identity = _mapper.Map<SaveIdentityResource, Identity>(resource);
+            var result = await _identityService.SaveAsync(identity);
+
+            if (!result.Success)
+                return BadRequest(result.Message);
+
+            var identityResource = _mapper.Map<Identity, IdentityResource>(result.Identity);
+            return Ok(identityResource);
+        }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAsync(int id)

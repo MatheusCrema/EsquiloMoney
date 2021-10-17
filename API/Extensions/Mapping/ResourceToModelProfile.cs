@@ -8,8 +8,8 @@ namespace ApplicationCore.Extensions.Mapping
 {
     public class ResourceToModelProfile : Profile
     {
-        
-        public ResourceToModelProfile() 
+
+        public ResourceToModelProfile()
         {
             //Account
             CreateMap<AccountsQueryResource, AccountsQuery>();
@@ -18,20 +18,16 @@ namespace ApplicationCore.Extensions.Mapping
 
             //Category
             CreateMap<CategoriesQueryResource, CategoriesQuery>();
-
             CreateMap<SaveCategoryResource, Category>();
-
             CreateMap<UpdateCategoryResource, Category>();
 
             //CategoryBalance
             CreateMap<CategoryBalancesQueryResource, CategoryBalancesQuery>();
-
             CreateMap<SaveCategoryBalanceResource, CategoryBalance>();
-
 
             //Identity
             CreateMap<IdentitiesQueryResource, IdentitiesQuery>();
-            //CreateMap<SaveIdentityResource, Identity>();
+            CreateMap<SaveIdentityResource, Identity>();
             //CreateMap<UpdateIdentityResource, Identity>();
         }
     }

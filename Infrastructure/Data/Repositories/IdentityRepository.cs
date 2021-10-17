@@ -14,9 +14,9 @@ namespace Infrastructure.Data.Repositories
     {
         public IdentityRepository(AppDbContext context) : base(context) { }
 
-        public Task AddAsync(Identity identity)
+        public async Task AddAsync(Identity identity)
         {
-            throw new System.NotImplementedException();
+            await _context.Identities.AddAsync(identity);
         }
 
         public async Task<Identity> FindByIdAsync(int id)
