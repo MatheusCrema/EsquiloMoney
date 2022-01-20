@@ -1,20 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace ApplicationCore.Entities.Queries
 {
     public class Query
     {
         public int Page { get; protected set; }
         public int ItemsPerPage { get; protected set; }
+        public string SortBy { get; protected set; }
 
-        public Query(int page, int itemsPerPage)
+        public Query(int page, int itemsPerPage, string sortBy)
         {
             Page = page;
             ItemsPerPage = itemsPerPage;
+            SortBy = sortBy;
 
             if (Page <= 0)
             {

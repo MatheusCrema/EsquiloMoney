@@ -8,5 +8,6 @@ namespace EsquiloMoney.API.Resources
     {
         public int Page { get; set; }
         public int ItemsPerPage { get; set; }
+        public string SortBy { get; set; }
     }
 }

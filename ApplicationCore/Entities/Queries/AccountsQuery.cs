@@ -3,7 +3,7 @@
     public class AccountsQuery : Query
     {
 
-        public AccountsQuery(int page, int itemsPerPage) : base(page, itemsPerPage)
+        public AccountsQuery(int page, int itemsPerPage, string sortBy) : base(page, itemsPerPage, sortBy)
         {
             
         }

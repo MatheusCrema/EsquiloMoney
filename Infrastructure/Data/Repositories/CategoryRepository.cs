@@ -26,11 +26,26 @@ namespace Infrastructure.Data.Repositories
         {
             IQueryable<Category> queryable = _context.Categories.AsNoTracking();
 
+
+            //filtering
             if (query.Hierarchy.HasValue && query.Hierarchy >= 0)
             {
+                
                 queryable = queryable
                             .Include(p => p.CategoryBalances)
                             .Where(p => p.Hierarchy == query.Hierarchy);
+            }
+
+            //sorting
+            if (!string.IsNullOrEmpty(query.SortBy))
+            {
+                var columns = typeof(Category).GetProperties().Select(p => p.Name.ToLower()).ToList();
+
+                if (columns.Contains(query.SortBy.ToLower()))
+                {
+                    queryable = queryable.OrderBy(p => p.Name); //this needs to be dynamyc.
+                }
+                
             }
 
             int totalItems = await queryable.CountAsync();

@@ -51,7 +51,7 @@ namespace EsquiloMoney.API.Services
             try
             {
 
-                var query = new CategoryBalancesQuery(id, 1, 100);
+                var query = new CategoryBalancesQuery(id, 1, 100, "name");
                 //var query = new CategoryBalancesQuery()
                 //    Page = 1,
                 //    ItemsPerPage = 100

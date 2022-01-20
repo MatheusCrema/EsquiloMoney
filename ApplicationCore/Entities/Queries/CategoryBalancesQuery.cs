@@ -3,7 +3,7 @@
     public class CategoryBalancesQuery : Query
     {
         public int? CategoryID { get; set; }
-        public CategoryBalancesQuery(int? categoryID, int page, int itemsPerPage) : base(page, itemsPerPage)
+        public CategoryBalancesQuery(int? categoryID, int page, int itemsPerPage, string sortBy) : base(page, itemsPerPage, sortBy)
         {
             CategoryID = categoryID;
         }
