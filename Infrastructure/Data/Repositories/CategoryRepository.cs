@@ -1,12 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-
 using System.Threading.Tasks;
+
 using Microsoft.EntityFrameworkCore;
 
 using ApplicationCore.Entities;
 using ApplicationCore.Entities.Queries;
 using ApplicationCore.Interfaces.Repositories;
+
+using Infrastructure.Data.Common;
 
 namespace Infrastructure.Data.Repositories
 {
@@ -39,13 +41,8 @@ namespace Infrastructure.Data.Repositories
             //sorting
             if (!string.IsNullOrEmpty(query.SortBy))
             {
-                var columns = typeof(Category).GetProperties().Select(p => p.Name.ToLower()).ToList();
-
-                if (columns.Contains(query.SortBy.ToLower()))
-                {
-                    queryable = queryable.OrderBy(p => p.Name); //this needs to be dynamyc.
-                }
-                
+                queryable = queryable.SortBy(query.SortBy);
+                                           
             }
 
             int totalItems = await queryable.CountAsync();
@@ -60,6 +57,7 @@ namespace Infrastructure.Data.Repositories
                 TotalItems = totalItems
             };
         }
+
         public void Remove(Category category)
         {
             _context.Categories.Remove(category);
