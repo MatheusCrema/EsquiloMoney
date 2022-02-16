@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31321.278
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApplicationCore", "ApplicationCore\ApplicationCore.csproj", "{E438B147-F65B-4B58-948D-6476FF071652}"
 EndProject
@@ -17,6 +17,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastru
 	EndProjectSection
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "EsquiloMoneyDB", "EsquiloMoneyDB\EsquiloMoneyDB.sqlproj", "{163BD576-F3D8-402B-B28E-F07E603A778D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.Tests", "API.Tests\API.Tests.csproj", "{76E4F552-6FD2-424E-AFF5-84BB62008C2D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3880EC52-636F-45DE-A9ED-F4AD05EA9732} = {3880EC52-636F-45DE-A9ED-F4AD05EA9732}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +47,10 @@ Global
 		{163BD576-F3D8-402B-B28E-F07E603A778D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{163BD576-F3D8-402B-B28E-F07E603A778D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{163BD576-F3D8-402B-B28E-F07E603A778D}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{76E4F552-6FD2-424E-AFF5-84BB62008C2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76E4F552-6FD2-424E-AFF5-84BB62008C2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76E4F552-6FD2-424E-AFF5-84BB62008C2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76E4F552-6FD2-424E-AFF5-84BB62008C2D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,6 +60,7 @@ Global
 		{3880EC52-636F-45DE-A9ED-F4AD05EA9732} = {E64EE8C9-5A46-4D31-92EF-BD360A031DA1}
 		{646114A0-9A33-4867-AF42-6BC32EDA9DB3} = {E64EE8C9-5A46-4D31-92EF-BD360A031DA1}
 		{163BD576-F3D8-402B-B28E-F07E603A778D} = {E64EE8C9-5A46-4D31-92EF-BD360A031DA1}
+		{76E4F552-6FD2-424E-AFF5-84BB62008C2D} = {77282211-E683-480F-8832-C9791B0DDA16}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6857B106-24F4-443A-B630-36E1374AC615}
