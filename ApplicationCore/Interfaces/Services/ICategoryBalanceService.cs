@@ -4,7 +4,7 @@ using ApplicationCore.Entities;
 using ApplicationCore.Entities.Queries;
 using ApplicationCore.Interfaces.Services.Communication;
 
-namespace Domain.Services
+namespace ApplicationCore.Interfaces.Services
 {
     public interface ICategoryBalanceService
     {

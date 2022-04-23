@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 
 using ApplicationCore.Entities;
+using ApplicationCore.Entities.Raw;
 
 
 namespace Infrastructure.Data
@@ -18,13 +19,15 @@ namespace Infrastructure.Data
         public DbSet<Identity> Identities { get; set; }
         public DbSet<Institution> Institutions { get; set; }
 
+        public DbSet<TransactionsRawOld> TransactionsRawOlds { get; set; }
+
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
 
-
+            // Core
             builder.Entity<Account>().ToTable("Account", "Core");
             builder.Entity<Account>().HasKey(p => p.AccountID);
             builder.Entity<Account>().Property(p => p.AccountID);
@@ -34,7 +37,6 @@ namespace Infrastructure.Data
             builder.Entity<Account>().Property(p => p.InstitutionID);
             builder.Entity<Account>().HasOne(p => p.Institution);
             builder.Entity<Account>().HasOne(p => p.Identity);
-
 
             builder.Entity<Category>().ToTable("Category", "Core");
             builder.Entity<Category>().HasKey(p => p.CategoryID);
@@ -73,6 +75,22 @@ namespace Infrastructure.Data
             builder.Entity<Institution>().Property(p => p.Name).IsRequired().HasMaxLength(20);
             builder.Entity<Institution>().Property(p => p.CreatedDT).IsRequired();
             builder.Entity<Institution>().HasMany(p => p.Accounts);
+
+
+            // Raw
+            builder.Entity<TransactionsRawOld>().ToTable("Transactions_Raw_Old_csv", "raw");
+            builder.Entity<TransactionsRawOld>().HasKey(p => p.ID);
+            builder.Entity<TransactionsRawOld>().Property(p => p.ID);
+            builder.Entity<TransactionsRawOld>().Property(p => p.matchedCategoryID);
+            builder.Entity<TransactionsRawOld>().Property(p => p.Date);
+            builder.Entity<TransactionsRawOld>().Property(p => p.Cod);
+            builder.Entity<TransactionsRawOld>().Property(p => p.Category);
+            builder.Entity<TransactionsRawOld>().Property(p => p.SubCategory);
+            builder.Entity<TransactionsRawOld>().Property(p => p.Payment);
+            builder.Entity<TransactionsRawOld>().Property(p => p.Name);
+            builder.Entity<TransactionsRawOld>().Property(p => p.Value);
+            builder.Entity<TransactionsRawOld>().Property(p => p.Type);
+            builder.Entity<TransactionsRawOld>().Property(p => p.Comment);
         }
 
     }

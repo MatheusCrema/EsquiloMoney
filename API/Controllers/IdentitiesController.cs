@@ -4,7 +4,7 @@ using ApplicationCore.Entities;
 using ApplicationCore.Entities.Queries;
 using ApplicationCore.Entities.Resources;
 using ApplicationCore.Extensions;
-using Domain.Services;
+using ApplicationCore.Interfaces.Services;
 
 using Microsoft.AspNetCore.Mvc;
 

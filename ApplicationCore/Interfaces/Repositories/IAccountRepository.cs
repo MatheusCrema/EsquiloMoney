@@ -11,7 +11,6 @@ namespace ApplicationCore.Interfaces.Repositories
         Task<QueryResult<Account>> ListAsync(AccountsQuery query);
         Task<Account> FindByIdAsync(int id);
         void Remove(Account account);
-
         void Update(Account account);
     }
 }

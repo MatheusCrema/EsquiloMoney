@@ -9,7 +9,7 @@ using ApplicationCore.Entities;
 using ApplicationCore.Entities.Queries;
 using ApplicationCore.Interfaces.Repositories;
 using ApplicationCore.Interfaces.Services.Communication;
-using Domain.Services;
+using ApplicationCore.Interfaces.Services;
 
 namespace ApplicationCore.Services
 {

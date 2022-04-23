@@ -1,12 +1,12 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 using ApplicationCore.Entities;
 using ApplicationCore.Entities.Queries;
 using ApplicationCore.Interfaces.Repositories;
+using ApplicationCore.Interfaces.Services;
 using ApplicationCore.Interfaces.Services.Communication;
-using Domain.Services;
 
-using System.Threading.Tasks;
 
 
 namespace EsquiloMoney.API.Services

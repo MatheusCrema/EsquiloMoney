@@ -18,10 +18,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastru
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "EsquiloMoneyDB", "EsquiloMoneyDB\EsquiloMoneyDB.sqlproj", "{163BD576-F3D8-402B-B28E-F07E603A778D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API.Tests", "API.Tests\API.Tests.csproj", "{76E4F552-6FD2-424E-AFF5-84BB62008C2D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API.Tests", "API.Tests\API.Tests.csproj", "{76E4F552-6FD2-424E-AFF5-84BB62008C2D}"
 	ProjectSection(ProjectDependencies) = postProject
 		{3880EC52-636F-45DE-A9ED-F4AD05EA9732} = {3880EC52-636F-45DE-A9ED-F4AD05EA9732}
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelperConsole", "HelperConsole\HelperConsole.csproj", "{ABD4C4C6-AECE-4DF2-91E8-CCD263073D93}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{76E4F552-6FD2-424E-AFF5-84BB62008C2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{76E4F552-6FD2-424E-AFF5-84BB62008C2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{76E4F552-6FD2-424E-AFF5-84BB62008C2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABD4C4C6-AECE-4DF2-91E8-CCD263073D93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABD4C4C6-AECE-4DF2-91E8-CCD263073D93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABD4C4C6-AECE-4DF2-91E8-CCD263073D93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABD4C4C6-AECE-4DF2-91E8-CCD263073D93}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
