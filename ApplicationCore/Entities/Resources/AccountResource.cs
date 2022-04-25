@@ -13,4 +13,5 @@ namespace ApplicationCore.Entities.Resources
         public DateTime CreatedDT { get; set; }
 
     }
+
 }

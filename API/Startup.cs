@@ -67,6 +67,9 @@ namespace API
             services.AddScoped<IIdentityRepository, IdentityRepository>();
             services.AddScoped<IIdentityService, IdentityService>();
 
+            services.AddScoped<ITransactionRepository, TransactionRepository>();
+            services.AddScoped<ITransactionService, TransactionService>();
+
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             services.AddAutoMapper(typeof(Startup));

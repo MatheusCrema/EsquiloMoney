@@ -1,14 +1,12 @@
-﻿using AutoMapper;
+﻿using System.Threading.Tasks;
+
+using Microsoft.AspNetCore.Mvc;
+
+using AutoMapper;
 
 using ApplicationCore.Entities;
 using ApplicationCore.Entities.Queries;
 using ApplicationCore.Entities.Resources;
-using ApplicationCore.Extensions;
-
-
-using Microsoft.AspNetCore.Mvc;
-
-using System.Threading.Tasks;
 using ApplicationCore.Interfaces.Services;
 
 namespace API.Controllers

@@ -29,6 +29,11 @@ namespace ApplicationCore.Extensions.Mapping
             CreateMap<IdentitiesQueryResource, IdentitiesQuery>();
             CreateMap<SaveIdentityResource, Identity>();
             //CreateMap<UpdateIdentityResource, Identity>();
+
+            //Transaction
+            CreateMap<TransactionsQueryResource, TransactionsQuery>();
+            //CreateMap<SaveTransactionResource, Transaction>();
+            //CreateMap<UpdateTransactionResource, Transaction>();
         }
     }
 }

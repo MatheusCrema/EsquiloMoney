@@ -18,6 +18,8 @@ namespace Infrastructure.Data
         public DbSet<CategoryBalance> CategoryBalances { get; set; }
         public DbSet<Identity> Identities { get; set; }
         public DbSet<Institution> Institutions { get; set; }
+        public DbSet<Transaction> Transactions { get; set; }
+
 
         public DbSet<TransactionsRawOld> TransactionsRawOlds { get; set; }
 
@@ -75,6 +77,25 @@ namespace Infrastructure.Data
             builder.Entity<Institution>().Property(p => p.Name).IsRequired().HasMaxLength(20);
             builder.Entity<Institution>().Property(p => p.CreatedDT).IsRequired();
             builder.Entity<Institution>().HasMany(p => p.Accounts);
+
+            builder.Entity<Transaction>().ToTable("Transaction", "Core");
+            builder.Entity<Transaction>().HasKey(p => p.TransactionID);
+            builder.Entity<Transaction>().Property(p => p.Type).IsRequired().HasMaxLength(7);
+            builder.Entity<Transaction>().Property(p => p.Date).IsRequired();
+            builder.Entity<Transaction>().Property(p => p.Name).IsRequired().HasMaxLength(280);
+            builder.Entity<Transaction>().Property(p => p.Value).IsRequired();
+            builder.Entity<Transaction>().Property(p => p.Comment).HasMaxLength(510);
+            builder.Entity<Transaction>().Property(p => p.OriginalCurrencyID).IsRequired();
+            builder.Entity<Transaction>().Property(p => p.OriginalValue);
+            builder.Entity<Transaction>().Property(p => p.CategoryID).IsRequired();
+            builder.Entity<Transaction>().Property(p => p.PaymentTypeID).IsRequired();
+            builder.Entity<Transaction>().Property(p => p.AccountID).IsRequired();
+            builder.Entity<Transaction>().Property(p => p.CreatedDT).IsRequired();
+            builder.Entity<Transaction>().HasOne(p => p.Account);
+            builder.Entity<Transaction>().HasOne(p => p.Category);
+            //builder.Entity<Transaction>().HasOne(p => p.Currency);
+            //builder.Entity<Transaction>().HasOne(p => p.PaymentType);
+
 
 
             // Raw

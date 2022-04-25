@@ -19,7 +19,7 @@ namespace ApplicationCore.Interfaces.Services.Communication
         /// </summary>
         /// <param name="Account">Saved Account.</param>
         /// <returns>Response.</returns>
-        public AccountResponse(Account Account) : this(true, string.Empty, Account)
+        public AccountResponse(Account account) : this(true, string.Empty, account)
         { }
 
         /// <summary>

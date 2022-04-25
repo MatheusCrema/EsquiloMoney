@@ -1,13 +1,13 @@
 ﻿using System;
 
-namespace ApplicationCore.Entities
+namespace ApplicationCore.Entities.Resources
 {
-    public class Transaction
+    public class TransactionResource
     {
         public int? TransactionID { get; set; }
 
         public string Type { get; set; }
-        
+
         public DateTime Date { get; set; }
 
         public string Name { get; set; }
@@ -31,11 +31,10 @@ namespace ApplicationCore.Entities
         public Account Account { get; set; } = new Account();
 
         public Category Category { get; set; } = new Category();
-        
-        //public Currency Currency { get; set; } = new Currency();
-        
-       // public PaymentType PaymentType { get; set; } = new PaymentType();
 
+        //public Currency Currency { get; set; } = new Currency();
+
+       // public PaymentType PaymentType { get; set; } = new PaymentType();
     }
 
 
