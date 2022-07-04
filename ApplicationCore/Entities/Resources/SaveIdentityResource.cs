@@ -1,5 +1,4 @@
-﻿using System;
-
+﻿
 using System.ComponentModel.DataAnnotations;
 
 namespace ApplicationCore.Entities.Resources
@@ -22,7 +21,5 @@ namespace ApplicationCore.Entities.Resources
         public string Phone { get; set; }
 
     }
-
-
 
 }

@@ -26,9 +26,8 @@ namespace Infrastructure.Data.Repositories
 
         public async Task<QueryResult<Transaction>> ListAsync(TransactionsQuery query)
         {
-            IQueryable<Transaction> queryable = _context.Transactions.AsNoTracking().Include(p => p.Account).Include(p => p.Category);//.Include(p => p.PaymentType);
-            //.Include(p => p.Currency)
-
+            IQueryable<Transaction> queryable = _context.Transactions.AsNoTracking().Include(p => p.Account).Include(p => p.Category).Include(p => p.PaymentType);
+            
             int totalItems = await queryable.CountAsync();
 
             List<Transaction> transactions = await queryable.Skip((query.Page - 1) * query.ItemsPerPage)

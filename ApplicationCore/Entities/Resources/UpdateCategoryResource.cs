@@ -8,7 +8,7 @@ namespace ApplicationCore.Entities.Resources
     {
         public int CategoryID { get; set; }
 
-        
+
         [MaxLength(50)]
         public string Name { get; set; }
 

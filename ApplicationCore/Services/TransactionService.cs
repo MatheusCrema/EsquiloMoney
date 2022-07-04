@@ -66,9 +66,9 @@ namespace ApplicationCore.Services
             }
         }
 
-        public async Task<TransactionResponse> UpdateAsync(Transaction transaction)
+        public async Task<TransactionResponse> UpdateAsync(int id, Transaction transaction)
         {
-            var existingTransaction = _transactionRepository.FindByIdAsync(transaction.TransactionID.Value).Result;
+            var existingTransaction = _transactionRepository.FindByIdAsync(id).Result;
             var resultingTransaction = new Transaction();
 
             try

@@ -32,8 +32,8 @@ namespace ApplicationCore.Extensions.Mapping
 
             //Transaction
             CreateMap<TransactionsQueryResource, TransactionsQuery>();
-            //CreateMap<SaveTransactionResource, Transaction>();
-            //CreateMap<UpdateTransactionResource, Transaction>();
+            CreateMap<SaveTransactionResource, Transaction>();
+            CreateMap<UpdateTransactionResource, Transaction>();
         }
     }
 }

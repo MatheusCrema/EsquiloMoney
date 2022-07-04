@@ -18,6 +18,7 @@ namespace Infrastructure.Data
         public DbSet<CategoryBalance> CategoryBalances { get; set; }
         public DbSet<Identity> Identities { get; set; }
         public DbSet<Institution> Institutions { get; set; }
+        public DbSet<PaymentType> PaymentTypes { get; set; }
         public DbSet<Transaction> Transactions { get; set; }
 
 
@@ -78,6 +79,12 @@ namespace Infrastructure.Data
             builder.Entity<Institution>().Property(p => p.CreatedDT).IsRequired();
             builder.Entity<Institution>().HasMany(p => p.Accounts);
 
+            builder.Entity<PaymentType>().ToTable("PaymentType", "Core");
+            builder.Entity<PaymentType>().HasKey(p => p.PaymentTypeID);
+            builder.Entity<PaymentType>().Property(p => p.PaymentTypeID).IsRequired();
+            builder.Entity<PaymentType>().Property(p => p.Name).IsRequired().HasMaxLength(20);
+            builder.Entity<PaymentType>().Property(p => p.CreatedDT).IsRequired();
+            
             builder.Entity<Transaction>().ToTable("Transaction", "Core");
             builder.Entity<Transaction>().HasKey(p => p.TransactionID);
             builder.Entity<Transaction>().Property(p => p.Type).IsRequired().HasMaxLength(7);
@@ -94,7 +101,7 @@ namespace Infrastructure.Data
             builder.Entity<Transaction>().HasOne(p => p.Account);
             builder.Entity<Transaction>().HasOne(p => p.Category);
             //builder.Entity<Transaction>().HasOne(p => p.Currency);
-            //builder.Entity<Transaction>().HasOne(p => p.PaymentType);
+            builder.Entity<Transaction>().HasOne(p => p.PaymentType);
 
 
 

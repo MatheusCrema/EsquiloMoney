@@ -16,25 +16,25 @@ namespace ApplicationCore.Entities.Resources
 
         public string Comment { get; set; }
 
-        public int OriginalCurrencyID { get; set; }
+        //public int OriginalCurrencyID { get; set; }
 
-        public decimal OriginalValue { get; set; }
+        //public decimal OriginalValue { get; set; }
 
-        public int CategoryID { get; set; }
+        //public int CategoryID { get; set; }
 
-        public int PaymentTypeID { get; set; }
+        //public int PaymentTypeID { get; set; }
 
-        public int AccountID { get; set; }
+        //public int AccountID { get; set; }
 
         public DateTime CreatedDT { get; set; }
 
-        public Account Account { get; set; } = new Account();
+        //public AccountResource Account { get; set; } = new AccountResource();
 
-        public Category Category { get; set; } = new Category();
+        //public CategoryResource Category { get; set; } = new CategoryResource();
 
-        //public Currency Currency { get; set; } = new Currency();
+        ////public Currency Currency { get; set; } = new Currency();
 
-       // public PaymentType PaymentType { get; set; } = new PaymentType();
+        //public PaymentType PaymentType { get; set; } = new PaymentType();
     }
 
 

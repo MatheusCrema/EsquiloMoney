@@ -16,6 +16,6 @@ namespace ApplicationCore.Interfaces.Services
 
         Task<TransactionResponse> SaveAsync(Transaction Transaction);
 
-        Task<TransactionResponse> UpdateAsync(Transaction Transaction);
+        Task<TransactionResponse> UpdateAsync(int id, Transaction Transaction);
     }
 }
