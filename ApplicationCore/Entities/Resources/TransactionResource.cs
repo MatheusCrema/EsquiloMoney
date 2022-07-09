@@ -30,7 +30,7 @@ namespace ApplicationCore.Entities.Resources
 
         //public AccountResource Account { get; set; } = new AccountResource();
 
-        //public CategoryResource Category { get; set; } = new CategoryResource();
+        public CategoryResource Category { get; set; } = new CategoryResource();
 
         ////public Currency Currency { get; set; } = new Currency();
 
